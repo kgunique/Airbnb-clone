@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import SmallCard from '../components/SmallCard';
 import MediumCard from '../components/MediumCard';
 
-export default function Home({ exploreData,cardData }) {
+export default function Home({ exploreData, cardData }) {
   return (
     <div>
       <Head>
@@ -12,31 +12,31 @@ export default function Home({ exploreData,cardData }) {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       {/* Header Component */}
-      <Header/>
+      <Header />
       {/* Banner Component */}
-      <Banner/>
+      <Banner />
       <main>
         <section className="max-w-7xl mx-auto px-8 sm:px-16">
           <h2 className="text-4xl font-semibold pb-5 pt-6">Explore Nearby</h2>
           {/* fetch some data from the server .API endpoints */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {exploreData?.map(({img,location,distance}) => (
-                <SmallCard 
+            {exploreData?.map(({ img, location, distance }) => (
+              <SmallCard
                 key={img}
-                    img= {img} 
-                    distance={distance} 
-                    location = {location}
-                />
+                img={img}
+                distance={distance}
+                location={location}
+              />
             ))}
-          </div> 
+          </div>
         </section>
         <section className="max-w-7xl mx-auto px-8 sm:px-16">
           <h2 className="text-4xl font-semibold pb-5 pt-6">Live Anywhere</h2>
           <div className="flex space-x-12 overflow-scroll scrollbar-hide p-3 -ml-3">
-          {cardData?.map(({img,title})=>(
-            <MediumCard key={img} img={img} title={title}/>
-          ))
-          }
+            {cardData?.map(({ img, title }) => (
+              <MediumCard key={img} img={img} title={title} />
+            ))
+            }
           </div>
         </section>
       </main>
@@ -44,20 +44,20 @@ export default function Home({ exploreData,cardData }) {
   )
 }
 
-export async function getStaticProps(){
-    const exploreData = await fetch('https://links.papareact.com/pyp').
+export async function getStaticProps() {
+  const exploreData = await fetch('https://links.papareact.com/pyp').
     then(
-      (res) =>  res.json()
+      (res) => res.json()
     );
 
-    const cardData = await fetch('https://links.papareact.com/zp1').
+  const cardData = await fetch('https://links.papareact.com/zp1').
     then(
-      (res)=>res.json()
+      (res) => res.json()
     );
-    return{
-      props:{
-        exploreData,
-        cardData,
-      }
+  return {
+    props: {
+      exploreData,
+      cardData,
     }
+  }
 }
