@@ -15,7 +15,7 @@ function Header() {
             </div>
             {/* Center Part div ---- Search Bar*/}
             <div className="flex items-center md:border-2 rounded-full md:shadow-sm">
-                <input className="pl-5 bg-transparent outline-none flex-grow" type="text" placeholder="Start your search" />
+                <input className="pl-5 bg-transparent outline-none flex-grow" type="text" placeholder="Search" />
                 <SearchIcon className="hidden md:inline-flex h-8 bg-red-400 text-white cursor-pointer rounded-full p-2 md:mx-2" />
             </div>
             {/* Right part div */}
