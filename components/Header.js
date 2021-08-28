@@ -60,8 +60,8 @@ function Header({placeholder}) {
                 <SearchIcon className="hidden md:inline-flex h-8 bg-red-400 text-white cursor-pointer rounded-full p-2 md:mx-2" />
             </div>
             {/* Right part div */}
-            <div className="flex items-center space-x-4 justify-end text-gray-500">
-                <p className="hidden md:inline cursor-pointer space-x-5">Become a Host</p>
+            <div className="hidden md:flex items-center space-x-4 justify-end text-gray-500">
+                <p className=" cursor-pointer space-x-5">Become a Host</p>
                 <div className= "h-6">
                 <GlobeAltIcon className= "h-6 cursor-pointer"/>
                 </div>
